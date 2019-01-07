@@ -1,6 +1,7 @@
 language: python
-python: 
+python:
   - "2.7"
-
+before_script:
+  - curl https://raw.githubusercontent.com/google/styleguide/gh-pages/cpplint/cpplint.py -o cpplint.py
 script:
-  - python --help
+  - python cpplint.py ./main.cpp
